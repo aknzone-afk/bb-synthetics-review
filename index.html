@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.B. Synthetics Review Assistant</title>
+  <meta
+    name="description"
+    content="A mobile-friendly review assistant for B.B. Synthetics with dynamic SEO-friendly saree manufacturer review drafts."
+  />
+  <meta property="og:title" content="B.B. Synthetics Review Assistant" />
+  <meta
+    property="og:description"
+    content="Dynamic review drafts for B.B. Synthetics that copy the text and open the Google review page."
+  />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="./review-page.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="card">
+      <div class="brand-chip">AI Review Assistant</div>
+      <h1>B.B. Synthetics</h1>
+      <p class="subhead">Dynamic SEO-friendly review drafts for your saree manufacturing brand.</p>
+
+      <div class="rating-row" aria-label="Five star review suggestion">
+        <span>★★★★★</span>
+        <small>Dynamic 5-star review draft</small>
+      </div>
+
+      <div class="actions actions-top">
+        <button id="leaveReviewBtn" class="primary-btn" type="button">Copy Review &amp; Open Google</button>
+      </div>
+
+      <article class="review-box">
+        <div class="quote-bar" aria-hidden="true"></div>
+        <p id="reviewText"></p>
+      </article>
+
+      <div class="keyword-row" id="keywordRow" aria-label="Included SEO keywords"></div>
+
+      <p class="helper-text" id="helperText">
+        Tap the button below to copy the review text, then your Google review page will open.
+      </p>
+
+      <div class="microcopy">
+        <p>You can edit the review before posting on Google.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="./review-page.js"></script>
+</body>
+</html>
