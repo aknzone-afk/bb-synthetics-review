@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.B. Synthetics Review Assistant</title>
+  <meta
+    name="description"
+    content="A premium mobile review assistant for B.B. Synthetics that delivers polished customer review drafts before opening Google."
+  />
+  <link rel="stylesheet" href="./review-page.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="experience-panel">
+      <div class="hero-copy">
+        <div class="brand-chip">B.B. Synthetics Review Flow</div>
+        <p class="eyebrow">Premium textile brand feedback</p>
+        <h1>Make leaving a Google review feel effortless.</h1>
+        <p class="subhead">
+          We generate a polished AI review draft, copy it for the customer, and then open Google so they can paste, edit, and post in seconds.
+        </p>
+
+        <div class="trust-row" aria-label="Review quality indicators">
+          <div class="trust-card">
+            <span class="trust-label">Rating</span>
+            <strong>&#9733;&#9733;&#9733;&#9733;&#9733;</strong>
+          </div>
+          <div class="trust-card">
+            <span class="trust-label">Draft source</span>
+            <strong id="poolStatus">AI review generator</strong>
+          </div>
+          <div class="trust-card">
+            <span class="trust-label">Customer action</span>
+            <strong>Copy, edit, post</strong>
+          </div>
+        </div>
+      </div>
+
+      <section class="card" aria-labelledby="reviewAssistantHeading">
+        <div class="card-topline">
+          <div>
+            <p class="section-kicker">Review Assistant</p>
+            <h2 id="reviewAssistantHeading">Suggested customer review</h2>
+          </div>
+          <div class="status-pill" id="statusPill" aria-live="polite">Loading draft</div>
+        </div>
+
+        <article class="review-box" aria-live="polite">
+          <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+          <p id="reviewText">Preparing a review draft...</p>
+        </article>
+
+        <div class="keyword-block">
+          <p class="keyword-label">Included themes</p>
+          <div class="keyword-row" id="keywordRow" aria-label="Included review themes"></div>
+        </div>
+
+        <div class="actions">
+          <button id="leaveReviewBtn" class="primary-btn" type="button">Copy Review &amp; Open Google</button>
+          <button id="copyOnlyBtn" class="secondary-btn" type="button">Copy Only</button>
+          <button id="newDraftBtn" class="secondary-btn" type="button">New Draft</button>
+        </div>
+
+        <p class="helper-text" id="helperText">
+          We'll generate and copy the draft first, then open Google so the customer can paste it and post when ready.
+        </p>
+
+        <ol class="steps" aria-label="How it works">
+          <li>Generate a fresh AI review draft for the brand.</li>
+          <li>Copy the text to the customer's device.</li>
+          <li>Open Google so they can paste, edit, and submit.</li>
+        </ol>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./supabase-config.js"></script>
+  <script src="./review-page.js"></script>
+</body>
+</html>

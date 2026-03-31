@@ -1,31 +1,30 @@
-# Deploy This Review Assistant
+# Deploy This AI Review Assistant
 
-This folder is now ready for static hosting on GitHub Pages or Netlify.
+This folder is now ready for Netlify hosting with a serverless AI endpoint.
 
 ## Main file
 
 Use:
 
-`C:\Users\4001C\Desktop\CODEX\google-review-qr\index.html`
+`D:\OneDrive\CODEX BB\google-review-qr\index.html`
 
-## GitHub Pages
-
-1. Create a new GitHub repository.
-2. Upload everything from:
-   `C:\Users\4001C\Desktop\CODEX\google-review-qr`
-3. In GitHub, open `Settings > Pages`.
-4. Set the source to deploy from the main branch root.
-5. Your site URL will look like:
-   `https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/`
-
-## Netlify
+## Recommended host: Netlify
 
 1. Create a new site on Netlify.
 2. Drag and drop the full folder:
-   `C:\Users\4001C\Desktop\CODEX\google-review-qr`
-3. Netlify will publish the site automatically.
-4. Your site URL will look like:
+   `D:\OneDrive\CODEX BB\google-review-qr`
+3. In `Site configuration > Environment variables`, add:
+   `OPENAI_API_KEY = your OpenAI API key`
+4. Optional:
+   `OPENAI_MODEL = gpt-5.4-mini`
+5. Redeploy the site after saving environment variables.
+6. Your site URL will look like:
    `https://your-site-name.netlify.app/`
+
+## Important note
+
+GitHub Pages can host the HTML and CSS, but it cannot run the AI review generator because that requires a secure server-side function for the OpenAI API key.
+If you want the true AI-powered flow, use Netlify.
 
 ## After deployment
 
