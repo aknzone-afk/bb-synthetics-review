@@ -55,6 +55,18 @@ body::before {
   padding: 28px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .experience-panel {
   width: min(1120px, 100%);
   display: grid;
@@ -138,51 +150,6 @@ h1 {
   background:
     radial-gradient(circle at top right, rgba(191, 79, 45, 0.16), transparent 24%),
     radial-gradient(circle at bottom left, rgba(123, 104, 196, 0.12), transparent 28%);
-}
-
-.card-topline {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  align-items: flex-start;
-  margin-bottom: 22px;
-}
-
-.simple-topline {
-  align-items: center;
-  margin-bottom: 18px;
-}
-
-.section-kicker {
-  margin: 0 0 10px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--primary);
-}
-
-.status-pill {
-  flex-shrink: 0;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(111, 86, 155, 0.1);
-  color: #5e477e;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.status-pill.ready {
-  background: rgba(67, 134, 91, 0.14);
-  color: #2d6e43;
-}
-
-.status-pill.warning {
-  background: rgba(191, 79, 45, 0.14);
-  color: var(--primary-deep);
 }
 
 .review-box {
@@ -334,15 +301,6 @@ button:disabled {
 
   .actions {
     grid-template-columns: 1fr;
-  }
-
-  .card-topline {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .status-pill {
-    align-self: flex-start;
   }
 
   .review-box {

@@ -51,7 +51,6 @@ const variationProfiles = [
 
 const reviewText = document.getElementById("reviewText");
 const leaveReviewBtn = document.getElementById("leaveReviewBtn");
-const statusPill = document.getElementById("statusPill");
 
 const deviceIdStorageKey = "bb-synthetics-device-id-v1";
 
@@ -72,15 +71,6 @@ function getDeviceId() {
 
   localStorage.setItem(deviceIdStorageKey, deviceId);
   return deviceId;
-}
-
-function setStatus(label, tone) {
-  statusPill.textContent = label;
-  statusPill.className = "status-pill";
-
-  if (tone) {
-    statusPill.classList.add(tone);
-  }
 }
 
 function setButtonsDisabled(isDisabled) {
@@ -151,26 +141,22 @@ async function loadReviewFromAI() {
 async function renderReview(options = {}) {
   setButtonsDisabled(true);
   setActionLabels("Loading Review...");
-  setStatus("Loading draft", "");
 
   try {
     currentReview = await loadReviewFromAI();
     reviewText.textContent = currentReview.review_text;
-    setStatus("Ready", "ready");
   } catch (error) {
     try {
       currentReview = await loadReviewFromSupabase();
       reviewText.textContent = currentReview.review_text;
-      setStatus("Ready", "ready");
     } catch (fallbackError) {
       currentReview = null;
       reviewText.textContent =
         "No review draft is available right now. Check the AI function configuration or refill the Supabase pool, then reload this page.";
-      setStatus("Needs attention", "warning");
     }
   } finally {
     setButtonsDisabled(false);
-    setActionLabels("Copy Review & Open Google");
+    setActionLabels("LEAVE APPRECIATION");
   }
 }
 
@@ -178,16 +164,13 @@ async function copyCurrentReview() {
   const text = currentReview ? currentReview.review_text : "";
 
   if (!text) {
-    setStatus("No draft loaded", "warning");
     return false;
   }
 
   try {
     await navigator.clipboard.writeText(text);
-    setStatus("Copied", "ready");
     return true;
   } catch (error) {
-    setStatus("Copy blocked", "warning");
     return false;
   }
 }
